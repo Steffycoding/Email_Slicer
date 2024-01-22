@@ -9,6 +9,10 @@ def email_slicer(email):
         str: A formatted string containing the username and domain.
              Returns "Invalid email format." if the email is not in the expected format.
     """
+    # Validate if the email address contains the '@' symbol
+    if '@' not in email:
+        return "Invalid email format. Missing '@' symbol."
+
     try:
         # Split the email address into username and domain using the '@' symbol
         username, domain = email.split('@')
